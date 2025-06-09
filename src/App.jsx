@@ -1,35 +1,35 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+//import './App.css'
+import { Outlet } from 'react-router-dom';
+
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <main>
+        <Outlet />
+      </main>
     </>
   )
 }
 
-export default App
+export default App;
+// This is the main application component for a portfolio website.
+// It serves as a layout for the application, allowing nested routes to render
+// their content within the main section. The `Outlet` component from
+// `react-router-dom` is used to render the child routes defined in the router
+// configuration. This allows for a clean separation of concerns, where each
+// page (like About, Portfolio, Contact) can be developed independently and
+// still be part of the overall application structure. The main section can
+// also be styled using CSS to create a cohesive look and feel across the
+// portfolio site. This component can be imported and used in the main entry
+// point of the application (e.g., `main.jsx`) to set up the routing and
+// render the appropriate page based on the current URL. By using `Outlet`, the
+// application can dynamically switch between different pages without needing
+// to reload the entire application, providing a smooth user experience. This
+// approach is particularly useful for single-page applications (SPAs) where
+// the goal is to provide a fast and responsive interface for users to navigate
+// through different sections of the portfolio without unnecessary page reloads.
+// The `App` component can also include additional features such as a navigation
+// bar, footer, or global styles that apply to all pages. This helps maintain
+// consistency across the portfolio and enhances the overall user experience.
